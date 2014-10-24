@@ -48,11 +48,15 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
         setContentView(R.layout.activity_main);
         setupmap();
         mLocationClient = new LocationClient(this, this, this);
+        addTrees();
 
         // ((LocationManager)getSystemService(Context.LOCATION_SERVICE)).;
 
 
     }
+
+
+
 
     public static HashMap<LatLng,TreeMeta> getMetadata()
     {
@@ -62,6 +66,7 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
     protected void onResume() {
         super.onResume();
         setupmap();
+        addTrees();
     }
 
     private void setupmap()
