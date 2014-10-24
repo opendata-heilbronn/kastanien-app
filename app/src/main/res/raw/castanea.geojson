@@ -1,0 +1,353 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node/1279151914",
+      "properties": {
+        "@id": "node/1279151914",
+        "denotation": "urban",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "genus:en": "chesnut",
+        "natural": "tree",
+        "type": "broad_leafed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0210567,
+          48.619567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1279151923",
+      "properties": {
+        "@id": "node/1279151923",
+        "denotation": "urban",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "genus:en": "chesnut",
+        "natural": "tree",
+        "type": "broad_leafed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0164696,
+          48.6238317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1279151924",
+      "properties": {
+        "@id": "node/1279151924",
+        "denotation": "urban",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "genus:en": "chesnut",
+        "natural": "tree",
+        "type": "broad_leafed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0209389,
+          48.6195561
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1279151925",
+      "properties": {
+        "@id": "node/1279151925",
+        "denotation": "urban",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "genus:en": "chesnut",
+        "natural": "tree",
+        "type": "broad_leafed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.020725,
+          48.6197124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1279151930",
+      "properties": {
+        "@id": "node/1279151930",
+        "denotation": "urban",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "genus:en": "chesnut",
+        "natural": "tree",
+        "type": "broad_leafed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0166483,
+          48.6238178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1279151932",
+      "properties": {
+        "@id": "node/1279151932",
+        "denotation": "urban",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "genus:en": "chesnut",
+        "natural": "tree",
+        "type": "broad_leafed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0161908,
+          48.6238495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1279151943",
+      "properties": {
+        "@id": "node/1279151943",
+        "denotation": "urban",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "genus:en": "chesnut",
+        "natural": "tree",
+        "type": "broad_leafed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0207771,
+          48.619543
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1279151946",
+      "properties": {
+        "@id": "node/1279151946",
+        "denotation": "urban",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "genus:en": "chesnut",
+        "natural": "tree",
+        "type": "broad_leafed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.016385,
+          48.6238396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1284212833",
+      "properties": {
+        "@id": "node/1284212833",
+        "denotation": "urban",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "genus:en": "chesnut",
+        "natural": "tree",
+        "type": "broad_leafed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0162849,
+          48.6238418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1284212844",
+      "properties": {
+        "@id": "node/1284212844",
+        "denotation": "urban",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "genus:en": "chesnut",
+        "natural": "tree",
+        "type": "broad_leafed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0165553,
+          48.6238255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1609050441",
+      "properties": {
+        "@id": "node/1609050441",
+        "genus": "Castanea",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1897806,
+          48.8951124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2334282166",
+      "properties": {
+        "@id": "node/2334282166",
+        "genus": "Castanea",
+        "natural": "tree",
+        "note": "2013-06-06",
+        "species": "Castanea sativa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3033657,
+          49.5350153
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2820732958",
+      "properties": {
+        "@id": "node/2820732958",
+        "genus": "Castanea",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5103574,
+          48.0598989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2820732959",
+      "properties": {
+        "@id": "node/2820732959",
+        "genus": "Castanea",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5103289,
+          48.0600002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3072096441",
+      "properties": {
+        "@id": "node/3072096441",
+        "genus": "Castanea",
+        "genus:de": "Kastanie",
+        "natural": "tree",
+        "type": "broad_leaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6466426,
+          48.2087398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3121884469",
+      "properties": {
+        "@id": "node/3121884469",
+        "genus": "Castanea",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2935888,
+          49.1065507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3121890815",
+      "properties": {
+        "@id": "node/3121890815",
+        "genus": "Castanea",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1376505,
+          49.0395219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3121890816",
+      "properties": {
+        "@id": "node/3121890816",
+        "genus": "Castanea",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1382804,
+          49.0433398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3121890817",
+      "properties": {
+        "@id": "node/3121890817",
+        "genus": "Castanea",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1383752,
+          49.0433477
+        ]
+      }
+    }
+  ]
+}
