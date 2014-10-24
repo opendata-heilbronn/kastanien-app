@@ -204,9 +204,12 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
 
 
         Location l = mLocationClient.getLastLocation();
-        LatLng coords = new LatLng(l.getLatitude(),l.getLongitude());
-        mmap.addMarker(new MarkerOptions().position(coords).title("Position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-        mmap.moveCamera(CameraUpdateFactory.newLatLngZoom(coords,10));
+        if(l!=null)
+        {
+            LatLng coords = new LatLng(l.getLatitude(),l.getLongitude());
+            mmap.addMarker(new MarkerOptions().position(coords).title("Position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            mmap.moveCamera(CameraUpdateFactory.newLatLngZoom(coords,10));
+        }
     }
 
     protected void onStart() {

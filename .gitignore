@@ -2,3 +2,8 @@ build/
 **/build/
 .DS_Store
 /build
+local.properties
+**.iml
+.idea
+**.ipr
+**/google_maps_api.xml

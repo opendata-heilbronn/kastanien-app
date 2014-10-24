@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">NEwTest</string>
+    <string name="app_name">Kastanien-App</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_test">Map</string>
     <string name="title_activity_tree_info">TreeInfo</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
