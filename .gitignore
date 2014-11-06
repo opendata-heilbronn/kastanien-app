@@ -7,4 +7,4 @@ local.properties
 .idea
 **.ipr
 **/google_maps_api.xml
-**.gradle
+.gradle/
