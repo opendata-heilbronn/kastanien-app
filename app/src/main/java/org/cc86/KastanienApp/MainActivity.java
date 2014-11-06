@@ -35,7 +35,7 @@ import java.util.HashMap;
 public class MainActivity extends Activity implements View.OnClickListener,GoogleMap.OnInfoWindowClickListener ,GooglePlayServicesClient.ConnectionCallbacks,
         GooglePlayServicesClient.OnConnectionFailedListener
 {
-
+    private boolean connected;
 
     TextView hw;
     MapView mv;
@@ -48,13 +48,13 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
         setContentView(R.layout.activity_main);
         setupmap();
         mLocationClient = new LocationClient(this, this, this);
-        addTrees();
+        //addTrees();
 
         // ((LocationManager)getSystemService(Context.LOCATION_SERVICE)).;
 
 
     }
-
+    private LatLng coordsPos=null;
 
 
 
@@ -66,7 +66,8 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
     protected void onResume() {
         super.onResume();
         setupmap();
-        addTrees();
+        if(connected)
+            addTrees();
     }
 
     private void setupmap()
@@ -104,7 +105,7 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
     public void onClick(View v) {
         if(v.getId()==R.id.button)
         {
-            addTrees();
+           // addTrees();
 
 
 
@@ -158,8 +159,22 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
 
                 TreeMeta tm = new TreeMeta("unbekannt","unbekannt","unbekannt",feature);
                 LatLng metapos = new LatLng(position.getLatitude(), position.getLongitude());
-                metadata.put(metapos,tm);
-                mmap.addMarker(new MarkerOptions().position(metapos).title(feature.getProperty("genus")+"").snippet("  "));
+
+                //if(maxCounter==1) {
+                    float[] dest = new float[3];
+                    Location.distanceBetween(coordsPos.latitude,coordsPos.longitude,metapos.latitude,metapos.longitude,dest);
+                    /*Toast.makeText(this, "DST:"+dest[0],
+                            Toast.LENGTH_LONG).show();*/
+
+                //}
+                //feature.setProperty("DST",dest[0]);
+                //feature.setProperty("DST",dest[0]);
+                //feature.setProperty("DST",dest[0]);
+                if(dest[0]<10000)
+                {
+                    metadata.put(metapos,tm);
+                    mmap.addMarker(new MarkerOptions().position(metapos).title(feature.getProperty("genus")+"").snippet("  "));
+                }
                 if (maxCounter++ > 100) {
                     break;
                 }
@@ -168,8 +183,8 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
         }
     }
 
-    @Override
-    public void onInfoWindowClick(Marker marker) {
+        @Override
+        public void onInfoWindowClick(Marker marker) {
         if(marker.getTitle().equals("Position"))
         {
             return;
@@ -214,7 +229,9 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
             LatLng coords = new LatLng(l.getLatitude(),l.getLongitude());
             mmap.addMarker(new MarkerOptions().position(coords).title("Position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
             mmap.moveCamera(CameraUpdateFactory.newLatLngZoom(coords,10));
+            coordsPos=coords;
         }
+        addTrees();
     }
 
     protected void onStart() {
