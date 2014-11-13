@@ -1,2 +1,2 @@
 include ':app'
-include ':kastenien-backend'
+include ':kastanien-backend'
