@@ -8,3 +8,7 @@ local.properties
 **.ipr
 **/google_maps_api.xml
 .gradle/
+
+atlassian-ide-plugin.xml
+gradle
+
