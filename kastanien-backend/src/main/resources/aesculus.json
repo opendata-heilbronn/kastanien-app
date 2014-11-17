@@ -1,0 +1,1658 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node/559464369",
+      "properties": {
+        "@id": "node/559464369",
+        "denotation": "urban",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "type": "broad_leaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.473241,
+          49.2813882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/669800472",
+      "properties": {
+        "@id": "node/669800472",
+        "genus": "Aesculus",
+        "genus:de": "Rosskastanie",
+        "leaf_type": "broadleaved",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3053013,
+          48.4347651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/885982601",
+      "properties": {
+        "@id": "node/885982601",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "type": "broad_leaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5759304,
+          48.8993729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120934",
+      "properties": {
+        "@id": "node/1766120934",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5694323,
+          49.3808052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120945",
+      "properties": {
+        "@id": "node/1766120945",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5696164,
+          49.3808321
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120950",
+      "properties": {
+        "@id": "node/1766120950",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5697072,
+          49.3808475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120953",
+      "properties": {
+        "@id": "node/1766120953",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5697946,
+          49.3808575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120955",
+      "properties": {
+        "@id": "node/1766120955",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5699775,
+          49.3808751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120959",
+      "properties": {
+        "@id": "node/1766120959",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5700695,
+          49.3808897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120969",
+      "properties": {
+        "@id": "node/1766120969",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5705226,
+          49.380942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120973",
+      "properties": {
+        "@id": "node/1766120973",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5697615,
+          49.3809635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120976",
+      "properties": {
+        "@id": "node/1766120976",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5708243,
+          49.3809845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120978",
+      "properties": {
+        "@id": "node/1766120978",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5699421,
+          49.3809881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120979",
+      "properties": {
+        "@id": "node/1766120979",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5709126,
+          49.3809961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120984",
+      "properties": {
+        "@id": "node/1766120984",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.571001,
+          49.3810078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120986",
+      "properties": {
+        "@id": "node/1766120986",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5710893,
+          49.3810195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120990",
+      "properties": {
+        "@id": "node/1766120990",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5711776,
+          49.3810311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120993",
+      "properties": {
+        "@id": "node/1766120993",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5712659,
+          49.3810428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120996",
+      "properties": {
+        "@id": "node/1766120996",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5713542,
+          49.3810544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766120998",
+      "properties": {
+        "@id": "node/1766120998",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5714425,
+          49.3810661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121003",
+      "properties": {
+        "@id": "node/1766121003",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5715308,
+          49.3810777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121005",
+      "properties": {
+        "@id": "node/1766121005",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5716191,
+          49.3810894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121008",
+      "properties": {
+        "@id": "node/1766121008",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5717074,
+          49.381101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121015",
+      "properties": {
+        "@id": "node/1766121015",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5722809,
+          49.3811694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121022",
+      "properties": {
+        "@id": "node/1766121022",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5726335,
+          49.3812179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121023",
+      "properties": {
+        "@id": "node/1766121023",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5727219,
+          49.3812296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121024",
+      "properties": {
+        "@id": "node/1766121024",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5728985,
+          49.3812529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121025",
+      "properties": {
+        "@id": "node/1766121025",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5729868,
+          49.3812645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121026",
+      "properties": {
+        "@id": "node/1766121026",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5730751,
+          49.3812762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121027",
+      "properties": {
+        "@id": "node/1766121027",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5731634,
+          49.3812878
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121028",
+      "properties": {
+        "@id": "node/1766121028",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5732517,
+          49.3812995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121029",
+      "properties": {
+        "@id": "node/1766121029",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.57334,
+          49.3813111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121030",
+      "properties": {
+        "@id": "node/1766121030",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5734283,
+          49.3813228
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121031",
+      "properties": {
+        "@id": "node/1766121031",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5735166,
+          49.3813344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1766121033",
+      "properties": {
+        "@id": "node/1766121033",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "HiRes aerial imagery",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5735914,
+          49.3813451
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2329510849",
+      "properties": {
+        "@id": "node/2329510849",
+        "denotation": "urban",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus turbinata",
+        "type": "broad_leaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4830116,
+          49.4568556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2363082966",
+      "properties": {
+        "@id": "node/2363082966",
+        "denotation": "urban",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "type": "broad_leaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4859946,
+          49.4595761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2363082971",
+      "properties": {
+        "@id": "node/2363082971",
+        "denotation": "urban",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "type": "broad_leaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4860834,
+          49.4596046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2500556035",
+      "properties": {
+        "@id": "node/2500556035",
+        "genus": "Aesculus",
+        "genus:de": "Rosskastanie",
+        "natural": "tree",
+        "type": "broad_leaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0611222,
+          48.9382013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2500556036",
+      "properties": {
+        "@id": "node/2500556036",
+        "genus": "Aesculus",
+        "genus:de": "Rosskastanie",
+        "natural": "tree",
+        "type": "broad_leaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0612602,
+          48.9382363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2591702320",
+      "properties": {
+        "@id": "node/2591702320",
+        "genus": "Aesculus",
+        "natural": "tree"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9073984,
+          48.4115211
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2818289849",
+      "properties": {
+        "@id": "node/2818289849",
+        "genus": "Aesculus",
+        "genus:de": "Kastanie",
+        "natural": "tree",
+        "species": "Aesculus hippocastanum",
+        "species:de": "Rosskastanie",
+        "type": "broad_leaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4583951,
+          48.9980853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2818290411",
+      "properties": {
+        "@id": "node/2818290411",
+        "genus": "Aesculus",
+        "genus:de": "Kastanie",
+        "natural": "tree",
+        "species": "Aesculus hippocastanum",
+        "species:de": "Rosskastanie",
+        "type": "broad_leaved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4449628,
+          49.0258412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2819322667",
+      "properties": {
+        "@id": "node/2819322667",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.2159901,
+          48.9473531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2819322674",
+      "properties": {
+        "@id": "node/2819322674",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum",
+        "species:de": "Rosskastanie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.211949,
+          48.9474629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2819322676",
+      "properties": {
+        "@id": "node/2819322676",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.2154121,
+          48.9474924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2819322678",
+      "properties": {
+        "@id": "node/2819322678",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.2148169,
+          48.9476262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2819322680",
+      "properties": {
+        "@id": "node/2819322680",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.2146413,
+          48.9476516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/2819322683",
+      "properties": {
+        "@id": "node/2819322683",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.2144131,
+          48.9476931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138570",
+      "properties": {
+        "@id": "node/3033138570",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.569258,
+          49.3807786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138571",
+      "properties": {
+        "@id": "node/3033138571",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5694077,
+          49.3809106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138572",
+      "properties": {
+        "@id": "node/3033138572",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5694894,
+          49.3809191
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138573",
+      "properties": {
+        "@id": "node/3033138573",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.57062,
+          49.3810652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138574",
+      "properties": {
+        "@id": "node/3033138574",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5707605,
+          49.3810794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138575",
+      "properties": {
+        "@id": "node/3033138575",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5708901,
+          49.3810971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138576",
+      "properties": {
+        "@id": "node/3033138576",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5710176,
+          49.3811149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138577",
+      "properties": {
+        "@id": "node/3033138577",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5712714,
+          49.3811475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138578",
+      "properties": {
+        "@id": "node/3033138578",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5714609,
+          49.3811695
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138581",
+      "properties": {
+        "@id": "node/3033138581",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5721588,
+          49.3812591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138583",
+      "properties": {
+        "@id": "node/3033138583",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5723298,
+          49.3812783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138587",
+      "properties": {
+        "@id": "node/3033138587",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5724965,
+          49.3813038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138589",
+      "properties": {
+        "@id": "node/3033138589",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5726664,
+          49.3813215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138590",
+      "properties": {
+        "@id": "node/3033138590",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5727862,
+          49.381335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138592",
+      "properties": {
+        "@id": "node/3033138592",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5729463,
+          49.381357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138594",
+      "properties": {
+        "@id": "node/3033138594",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5730487,
+          49.3813733
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3033138596",
+      "properties": {
+        "@id": "node/3033138596",
+        "denotation": "cluster",
+        "genus": "Aesculus",
+        "genus:de": "Gewöhnliche Rosskastanie",
+        "leaf_cycle": "deciduous",
+        "leaf_type": "broadleaved",
+        "natural": "tree",
+        "source": "Bing 2013",
+        "species": "Aesculus hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5732993,
+          49.3814052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579271",
+      "properties": {
+        "@id": "node/3052579271",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0296243,
+          49.4418446
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579272",
+      "properties": {
+        "@id": "node/3052579272",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0291759,
+          49.441845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579273",
+      "properties": {
+        "@id": "node/3052579273",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0292853,
+          49.4418459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579274",
+      "properties": {
+        "@id": "node/3052579274",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0295215,
+          49.441846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579275",
+      "properties": {
+        "@id": "node/3052579275",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0294034,
+          49.4418469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579276",
+      "properties": {
+        "@id": "node/3052579276",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0297493,
+          49.4419149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579277",
+      "properties": {
+        "@id": "node/3052579277",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0296255,
+          49.4419188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579280",
+      "properties": {
+        "@id": "node/3052579280",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0297405,
+          49.4419975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579281",
+      "properties": {
+        "@id": "node/3052579281",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0296138,
+          49.4420724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579283",
+      "properties": {
+        "@id": "node/3052579283",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0297396,
+          49.442073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579285",
+      "properties": {
+        "@id": "node/3052579285",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0296129,
+          49.4421501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579286",
+      "properties": {
+        "@id": "node/3052579286",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0297381,
+          49.4421529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579297",
+      "properties": {
+        "@id": "node/3052579297",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.029608,
+          49.4422255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579298",
+      "properties": {
+        "@id": "node/3052579298",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0297352,
+          49.4422288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579299",
+      "properties": {
+        "@id": "node/3052579299",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0296067,
+          49.4422953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3052579300",
+      "properties": {
+        "@id": "node/3052579300",
+        "genus": "Aesculus",
+        "natural": "tree",
+        "species": "Aesculus␣hippocastanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0297378,
+          49.4423021
+        ]
+      }
+    }
+  ]
+}

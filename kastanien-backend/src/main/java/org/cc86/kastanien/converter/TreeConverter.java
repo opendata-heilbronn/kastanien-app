@@ -19,6 +19,15 @@ public class TreeConverter {
 		this.fileName = fileName;
 	}
 
+	public static void main(String[] args) {
+		try {
+			new TreeConverter(args[0]).run();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	private void run() throws Exception {
 		ObjectMapper objectMapper = new ObjectMapper();
 		String content = FileUtils.readFileToString(new File(
@@ -35,7 +44,7 @@ public class TreeConverter {
 
 			convert(feature.getGeometry());
 		}
-		objectMapper.writeValue(new FileOutputStream("kastanien.geojson"), result);
+		objectMapper.writeValue(new FileOutputStream("kastanien.json"), result);
 	}
 
 	private GeoPoint convert(GeoJsonObject geometry) {
@@ -43,18 +52,8 @@ public class TreeConverter {
 
 		}
 		else if (geometry instanceof  Point) {
-			
 		}
 		return null;
-	}
-
-	public static void main(String[] args) {
-		try {
-			new TreeConverter(args[0]).run();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 }
