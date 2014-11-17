@@ -14,7 +14,7 @@ public class ImportController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String get() {
-		importService.importTrees();
-		return "OK";
+		long trees = importService.importTrees();
+		return "OK, trees: " + trees;
 	}
 }

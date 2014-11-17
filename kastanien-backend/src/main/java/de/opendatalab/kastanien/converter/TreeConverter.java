@@ -1,56 +1,22 @@
 package de.opendatalab.kastanien.converter;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import de.opendatalab.kastanien.GeoPoint;
-import org.apache.commons.io.FileUtils;
-import org.geojson.*;
+import de.opendatalab.kastanien.Tree;
+import org.geojson.Feature;
 
-import java.io.File;
-import java.io.FileOutputStream;
+import java.util.HashMap;
+import java.util.Map;
 
-public class TreeConverter {
+public abstract class TreeConverter {
 
-	private String fileName;
+	public abstract Tree toTree(Feature feature);
 
-	public TreeConverter(String fileName) {
-		this.fileName = fileName;
-	}
-
-	public static void main(String[] args) {
-		try {
-			new TreeConverter(args[0]).run();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	private void run() throws Exception {
-		ObjectMapper objectMapper = new ObjectMapper();
-		String content = FileUtils.readFileToString(new File(
-				fileName), "UTF-8");
-		FeatureCollection featureCollection = objectMapper.readValue(content, FeatureCollection.class);
-		FeatureCollection result = new FeatureCollection();
-		int counter = 0;
-		for (Feature feature : featureCollection) {
-			String baumart = feature.getProperty("BAUMART");
-			if (baumart != null && baumart.contains("astanie")) {
-				counter++;
-				result.add(feature);
+	protected void convertProperties(Feature feature, Tree tree) {
+		Map<String, String> props = new HashMap<>();
+		for (Map.Entry<String, Object> entry : feature.getProperties().entrySet()) {
+			if (entry.getValue() != null) {
+				props.put(entry.getKey(), entry.getValue().toString());
 			}
-
-			convert(feature.getGeometry());
 		}
-		objectMapper.writeValue(new FileOutputStream("kastanien.json"), result);
+		tree.setProperties(props);
 	}
-
-	private GeoPoint convert(GeoJsonObject geometry) {
-		if (geometry instanceof MultiPoint) {
-
-		}
-		else if (geometry instanceof  Point) {
-		}
-		return null;
-	}
-
 }
