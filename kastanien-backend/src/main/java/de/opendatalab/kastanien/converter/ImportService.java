@@ -24,6 +24,7 @@ public class ImportService {
 	private TreeRepository treeRepository;
 
 	public void importTrees() {
+		treeRepository.deleteAll();
 		try {
 			InputStream inputStream = ImportService.class.getClassLoader().getResourceAsStream("kastanien.json");
 			FeatureCollection featureCollection =
