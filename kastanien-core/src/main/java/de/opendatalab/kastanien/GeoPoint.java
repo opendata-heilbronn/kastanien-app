@@ -1,4 +1,4 @@
-package org.cc86.kastanien.data;
+package de.opendatalab.kastanien;
 
 public class GeoPoint {
 

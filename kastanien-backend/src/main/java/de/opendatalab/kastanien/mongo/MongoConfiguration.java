@@ -1,4 +1,4 @@
-package org.cc86.kastanien;
+package de.opendatalab.kastanien.mongo;
 
 import com.mongodb.Mongo;
 import com.mongodb.WriteConcern;
@@ -19,7 +19,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import java.util.ArrayList;
 import java.util.List;
 
-@EnableMongoRepositories(basePackages = "org.cc86")
+@EnableMongoRepositories(basePackages = { "de.opendatalab" })
 @EnableMongoAuditing
 @Configuration
 public class MongoConfiguration extends AbstractMongoConfiguration {

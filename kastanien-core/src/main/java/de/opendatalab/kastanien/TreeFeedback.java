@@ -1,11 +1,8 @@
-package org.cc86.kastanien.data;
+package de.opendatalab.kastanien;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 
-/**
- * Created by adrian on 23.10.14.
- */
 public class TreeFeedback {
 
 	@Id

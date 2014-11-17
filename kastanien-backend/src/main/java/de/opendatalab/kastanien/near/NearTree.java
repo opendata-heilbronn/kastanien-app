@@ -1,11 +1,8 @@
-package org.cc86.kastanien;
+package de.opendatalab.kastanien.near;
 
-import org.cc86.kastanien.data.Tree;
+import de.opendatalab.kastanien.Tree;
 import org.springframework.hateoas.Resource;
 
-/**
- * Created by adrian on 23.10.14.
- */
 public class NearTree {
 
 	private Resource<Tree> content;

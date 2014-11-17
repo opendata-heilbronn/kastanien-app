@@ -1,16 +1,13 @@
-package org.cc86.kastanien.converter;
+package de.opendatalab.kastanien.converter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.opendatalab.kastanien.GeoPoint;
 import org.apache.commons.io.FileUtils;
-import org.cc86.kastanien.data.GeoPoint;
 import org.geojson.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
 
-/**
- * Created by adrian on 23.10.14.
- */
 public class TreeConverter {
 
 	private String fileName;

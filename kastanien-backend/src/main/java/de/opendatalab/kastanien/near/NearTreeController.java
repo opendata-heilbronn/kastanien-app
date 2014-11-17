@@ -1,6 +1,6 @@
-package org.cc86.kastanien;
+package de.opendatalab.kastanien.near;
 
-import org.cc86.kastanien.data.NearUserQuery;
+import de.opendatalab.kastanien.data.NearUserQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resources;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * Created by adrian on 23.10.14.
- */
 @RestController
 @RequestMapping("/tree/near")
 public class NearTreeController {

@@ -1,4 +1,4 @@
-package org.cc86.kastanien;
+package de.opendatalab.kastanien;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;

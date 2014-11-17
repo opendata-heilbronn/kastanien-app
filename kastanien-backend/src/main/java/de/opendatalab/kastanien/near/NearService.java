@@ -1,13 +1,11 @@
-package org.cc86.kastanien;
+package de.opendatalab.kastanien.near;
 
-import org.cc86.kastanien.data.NearUserQuery;
-import org.cc86.kastanien.data.Tree;
+import de.opendatalab.kastanien.Tree;
+import de.opendatalab.kastanien.data.NearUserQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.geo.*;
 import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.NearQuery;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.hateoas.EntityLinks;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.Resource;
@@ -16,9 +14,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by adrian on 23.10.14.
- */
 @Service
 public class NearService {
 
