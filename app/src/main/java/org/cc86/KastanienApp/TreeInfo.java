@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -17,7 +18,12 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.geojson.Feature;
+import org.geojson.FeatureCollection;
+import org.osmdroid.bonuspack.overlays.Marker;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
@@ -26,28 +32,27 @@ import java.util.Set;
 public class TreeInfo extends Activity {
 
     private Feature tree;
-    private GoogleMap mmap;
-    private LatLng position;
+    private GeoPoint position;
+    private MapView mmap;
 
-    private void setupmap()
-    {
-
-        if(mmap==null)
-        {
-            FragmentManager f = getFragmentManager();
-            MapFragment frg = (MapFragment) f.findFragmentById(R.id.dmap);
-            Log.d("ALZR", frg + "");
-            mmap = frg .getMap();
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tree_info);
-        setupmap();
         double[] pos = getIntent().getDoubleArrayExtra("treeID");
-        tree=MainActivity.getMetadata().get(new LatLng(pos[0],pos[1])).getTree();
+        String treemetayaml = getIntent().getStringExtra("treeData");
+        try {
+            tree = new ObjectMapper().readValue(treemetayaml, FeatureCollection.class).getFeatures().get(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        position=new GeoPoint(pos[0],pos[1]);
+
+
+
         ArrayList<String>kvpairs = new ArrayList<String>();
         Map<String,Object> meta = tree.getProperties();
         Set<String> metaIDs = meta.keySet();
@@ -57,14 +62,20 @@ public class TreeInfo extends Activity {
         }
         ListView v = (ListView) findViewById(R.id.treeDataList);
         v.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,kvpairs));
-        position=new LatLng(pos[0],pos[1]);
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        mmap.addMarker(new MarkerOptions().title("Aktueller Baum").position(position).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-        mmap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 15));
+        mmap = (MapView)findViewById(R.id.dmap);
+        mmap.invalidate();
+        mmap.getController().setCenter(position);
+        mmap.getController().setZoom(12);
+        Marker m = new Marker(mmap);
+        m.setPosition(position);
+        m.setSnippet("Selected Tree");
+        mmap.invalidate();
     }
 
     @Override

@@ -1,85 +1,78 @@
 package org.cc86.KastanienApp;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.location.LocationClient;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.geojson.Feature;
 import org.geojson.FeatureCollection;
 import org.geojson.LngLatAlt;
 import org.geojson.Point;
+import org.osmdroid.bonuspack.overlays.Marker;
+import org.osmdroid.bonuspack.overlays.MarkerInfoWindow;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapController;
+import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.OverlayItem;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 
-public class MainActivity extends Activity implements View.OnClickListener,GoogleMap.OnInfoWindowClickListener ,GooglePlayServicesClient.ConnectionCallbacks,
-        GooglePlayServicesClient.OnConnectionFailedListener
+public class MainActivity extends Activity implements View.OnClickListener,GooglePlayServicesClient.ConnectionCallbacks,
+        GooglePlayServicesClient.OnConnectionFailedListener,SeekBar.OnSeekBarChangeListener
+
+
+
 {
     private boolean connected;
 
     TextView hw;
-    MapView mv;
-    GoogleMap  mmap;
+    MapView m;
+    MapController mc;
     LocationClient mLocationClient;
-    private static HashMap<LatLng,TreeMeta> metadata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setupmap();
         mLocationClient = new LocationClient(this, this, this);
         //addTrees();
+        ((SeekBar)findViewById(R.id.distanceSelector)).setOnSeekBarChangeListener(this);
+
+        m = (MapView) findViewById(R.id.mmap);
+        m.setBuiltInZoomControls(true);
+        mc= (MapController) m.getController();
+        mc.setZoom(5);
+        m.setMultiTouchControls(true);
 
         // ((LocationManager)getSystemService(Context.LOCATION_SERVICE)).;
 
 
     }
-    private LatLng coordsPos=null;
+    private Location coordsPos=null;
 
 
 
-    public static HashMap<LatLng,TreeMeta> getMetadata()
-    {
-        return metadata;
-    }
+
     @Override
     protected void onResume() {
         super.onResume();
-        setupmap();
         if(connected)
             addTrees();
-    }
-
-    private void setupmap()
-    {
-
-        if(mmap==null)
-        {
-            FragmentManager f = getFragmentManager();
-            MapFragment frg = (MapFragment) f.findFragmentById(R.id.mmap);
-            Log.d("ALZR",frg + "");
-            mmap = frg .getMap();
-        }
     }
 
     @Override
@@ -118,10 +111,10 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
 
     public void addTrees() {
 
-        metadata=new HashMap<LatLng, TreeMeta>();
         int maxCounter = 0;
-        mmap.setInfoWindowAdapter(new TreePopup());
-        mmap.setOnInfoWindowClickListener(this);
+        //mmap.setInfoWindowAdapter(new TreePopup());
+       // mmap.setOnInfoWindowClickListener(this);
+
         /*FeatureCollection fc = CastaneaReader.with(this).read(R.raw.kastanien);
 
 
@@ -158,11 +151,11 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
 
 
                 TreeMeta tm = new TreeMeta("unbekannt","unbekannt","unbekannt",feature);
-                LatLng metapos = new LatLng(position.getLatitude(), position.getLongitude());
+                GeoPoint metapos = new GeoPoint(position.getLatitude(), position.getLongitude());
 
                 //if(maxCounter==1) {
                     float[] dest = new float[3];
-                    Location.distanceBetween(coordsPos.latitude,coordsPos.longitude,metapos.latitude,metapos.longitude,dest);
+                    Location.distanceBetween(coordsPos.getLatitude(),coordsPos.getLongitude(),metapos.getLatitude(),metapos.getLongitude(),dest);
                     /*Toast.makeText(this, "DST:"+dest[0],
                             Toast.LENGTH_LONG).show();*/
 
@@ -172,8 +165,14 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
                 //feature.setProperty("DST",dest[0]);
                 if(dest[0]<10000)
                 {
-                    metadata.put(metapos,tm);
-                    mmap.addMarker(new MarkerOptions().position(metapos).title(feature.getProperty("genus")+"").snippet("  "));
+
+                    Marker mt = new Marker(m);
+                    mt.setPosition(metapos);
+                    mt.setSnippet("Kastanie #XXX");
+                    mt.setInfoWindow(new MarkerPopup(m,this));
+                    mt.setRelatedObject(tm);
+                    m.getOverlays().add(mt);
+                    //mmap.addMarker(new MarkerOptions().position(metapos).title(feature.getProperty("genus")+"").snippet("  "));
                 }
                 if (maxCounter++ > 100) {
                     break;
@@ -182,19 +181,21 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
 
         }
     }
+    /*
 
         @Override
-        public void onInfoWindowClick(Marker marker) {
+        public void onInfoWindowClick(Marker marker)
+        {
         if(marker.getTitle().equals("Position"))
         {
             return;
         }
         Intent myIntent = new Intent(this, TreeInfo.class);
-        LatLng position=marker.getPosition();
-        myIntent.putExtra("treeID", new double[]{position.latitude,position.longitude}); //Optional parameters
+
+        //myIntent.putExtra("treeID", new double[]{position.latitude,position.longitude}); //Optional parameters
         this.startActivity(myIntent);
     }
-
+    */
 
 
 
@@ -205,7 +206,7 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
              * If no resolution is available, display a dialog to the
              * user with the error.
              */
-            //TODO errormsg
+            //TO DO errormsg
             //showErrorDialog(connectionResult.getErrorCode());
     }
 
@@ -224,12 +225,24 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
 
 
         Location l = mLocationClient.getLastLocation();
+        coordsPos=l;
         if(l!=null)
         {
-            LatLng coords = new LatLng(l.getLatitude(),l.getLongitude());
-            mmap.addMarker(new MarkerOptions().position(coords).title("Position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-            mmap.moveCamera(CameraUpdateFactory.newLatLngZoom(coords,10));
-            coordsPos=coords;
+
+            GeoPoint position = new GeoPoint(l.getLatitude(),l.getLongitude());
+            OverlayItem positionRef = new OverlayItem("Ich", "Hier bin ich", position);
+            //mmap.addMarker(new MarkerOptions().position(coords).title("Position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            //mmap.moveCamera(CameraUpdateFactory.newLatLngZoom(coords,10));
+            Marker pm = new Marker(m);
+            pm.setSnippet("Standort");
+            pm.setPosition(position);
+            pm.setIcon(getResources().getDrawable(R.drawable.ic_launcher));
+            pm.setTitle("Standort");
+            m.getOverlays().add(pm);
+
+            mc.setCenter(position);
+            mc.setZoom(12);
+            m.invalidate();
         }
         addTrees();
     }
@@ -247,9 +260,23 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
         super.onStop();
     }
 
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
+    }
 
 
-    public class TreeMeta{
+    public class TreeMeta implements Serializable{
         private String treePlantYear;
         private String treeTopSize;
         private String treeTrunkSize;
@@ -279,30 +306,40 @@ public class MainActivity extends Activity implements View.OnClickListener,Googl
         }
     }
 
-    public class TreePopup implements GoogleMap.InfoWindowAdapter {
+
+    public class MarkerPopup extends MarkerInfoWindow
+    {
+
+        private MainActivity ma;
+        private Marker m;
+        public MarkerPopup( MapView mapView,MainActivity intenttarget) {
+            super(R.layout.bonuspack_bubble, mapView);
+            ma=intenttarget;
+            Button btn = (Button)(mView.findViewById(R.id.bubble_moreinfo));
+            btn.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    Intent myIntent = new Intent(ma, TreeInfo.class);
+                    FeatureCollection tw = new FeatureCollection();
+                    tw.add(((TreeMeta)m.getRelatedObject()).getTree());
+                    try {
+                        String metadata = new ObjectMapper().writeValueAsString(tw);
+                        myIntent.putExtra("treeData", metadata); //Optional parameters
+                        myIntent.putExtra("treeID",new double[]{m.getPosition().getLatitude(),m.getPosition().getLongitude()});
+                        ma.startActivity(myIntent);
+                    } catch (JsonProcessingException e) {
+                        e.printStackTrace();
+                    }
 
 
-        @Override
-            public View getInfoWindow(Marker marker) {
-                return null;
-            }
+                }
+            });
 
-            @Override
-            public View getInfoContents(Marker marker)
-            {
+        }
 
-            View v  = getLayoutInflater().inflate(R.layout.treeinfolayout, null);
-           TextView l1 = (TextView) v.findViewById(R.id.treeTopSize);
-            TextView l2 = (TextView) v.findViewById(R.id.treeTrunkSize);
-            TextView l3 = (TextView) v.findViewById(R.id.treePlantYear);
-                TextView name = (TextView) v.findViewById(R.id.baumname);
-
-                TreeMeta data=metadata.get(marker.getPosition());
-            l1.setText("Kronendurchmesser: "+data.getTreeTopSize());
-            l2.setText("Stammumfang: "+data.getTreeTrunkSize());
-            l3.setText("Pflanzjahr: "+data.getTreePlantYear());
-            name.setText("Art: "+marker.getTitle());
-            return v;
+        @Override public void onOpen(Object item){
+            m=(Marker)item;
+            super.onOpen(item);
+            mView.findViewById(R.id.bubble_moreinfo).setVisibility(View.VISIBLE);
         }
     }
 

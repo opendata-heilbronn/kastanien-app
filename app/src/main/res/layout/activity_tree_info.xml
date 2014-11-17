@@ -22,10 +22,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true">
 
-            <fragment
+            <org.osmdroid.views.MapView
                 android:layout_width="match_parent"
                 android:layout_height="115dp"
-                android:name="com.google.android.gms.maps.MapFragment"
                 android:id="@+id/dmap"
                 android:layout_weight="0.80"
                 android:layout_alignParentTop="true"

@@ -29,7 +29,12 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/osmbonuspack_v4.9.jar')
     compile 'com.google.android.gms:play-services:6.1.71'
     compile 'de.grundid.opendatalab:geojson-jackson:1.2'
     compile 'com.fasterxml.jackson.core:jackson-core:2.4.2'
+    compile 'org.osmdroid:osmdroid-android:4.2'
+    compile 'org.slf4j:slf4j-api:1.7.7'
+    compile 'org.apache.commons:commons-lang3:3.0'
+    compile 'com.google.code.gson:gson:2.2.4'
 }
