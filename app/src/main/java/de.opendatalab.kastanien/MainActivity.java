@@ -1,4 +1,4 @@
-package org.cc86.KastanienApp;
+package de.opendatalab.kastanien;
 
 import android.app.Activity;
 import android.content.Intent;

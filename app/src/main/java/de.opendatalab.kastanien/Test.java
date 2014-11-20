@@ -1,4 +1,4 @@
-package org.cc86.KastanienApp;
+package de.opendatalab.kastanien;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
