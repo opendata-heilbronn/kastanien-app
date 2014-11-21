@@ -1,21 +1,13 @@
 package de.opendatalab.kastanien;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.geojson.Feature;
 import org.geojson.FeatureCollection;
@@ -49,26 +41,24 @@ public class TreeInfo extends Activity {
         }
 
 
-        position=new GeoPoint(pos[0],pos[1]);
+        position = new GeoPoint(pos[0], pos[1]);
 
 
-
-        ArrayList<String>kvpairs = new ArrayList<String>();
-        Map<String,Object> meta = tree.getProperties();
+        ArrayList<String> kvpairs = new ArrayList<String>();
+        Map<String, Object> meta = tree.getProperties();
         Set<String> metaIDs = meta.keySet();
-        for(String key :metaIDs)
-        {
-            kvpairs.add(key+": "+meta.get(key));
+        for (String key : metaIDs) {
+            kvpairs.add(key + ": " + meta.get(key));
         }
         ListView v = (ListView) findViewById(R.id.treeDataList);
-        v.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,kvpairs));
+        v.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, kvpairs));
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        mmap = (MapView)findViewById(R.id.dmap);
+        mmap = (MapView) findViewById(R.id.dmap);
         mmap.invalidate();
         mmap.getController().setCenter(position);
         mmap.getController().setZoom(12);
