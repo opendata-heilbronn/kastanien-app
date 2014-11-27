@@ -114,6 +114,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
                     Marker mt = new Marker(mapView);
                     mt.setPosition(metapos);
                     mt.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                    mt.setIcon(getResources().getDrawable(R.drawable.tree_icon));
                     mt.setSnippet("Kastanie " + dest[0] + "m entfernt");
                     mt.setInfoWindow(new MarkerPopup(mapView, this));
                     mt.setRelatedObject(tm);
@@ -150,8 +151,9 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
             OverlayItem positionRef = new OverlayItem("Ich", "Hier bin ich", position);
             if (lastPositionMarker == null) {
                 lastPositionMarker = new Marker(mapView);
+                lastPositionMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                 lastPositionMarker.setSnippet("Standort");
-                lastPositionMarker.setIcon(getResources().getDrawable(R.drawable.ic_launcher));
+                lastPositionMarker.setIcon(getResources().getDrawable(R.drawable.flag_icon));
                 lastPositionMarker.setTitle("Standort");
                 mapView.getOverlays().add(lastPositionMarker);
                 mapController.setCenter(position);
