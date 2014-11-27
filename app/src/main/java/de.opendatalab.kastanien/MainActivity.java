@@ -37,6 +37,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
 
 {
     private Location lastPosition = null;
+    private Marker lastPositionMarker = null;
 
     private TextView hw;
     private MapView mapView;
@@ -93,35 +94,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
     }
 
     public void addTrees() {
-
         int maxCounter = 0;
-        //mmap.setInfoWindowAdapter(new TreePopup());
-        // mmap.setOnInfoWindowClickListener(this);
-
-        /*FeatureCollection fc = CastaneaReader.with(this).read(R.raw.kastanien);
-
-
-
-        for (Feature feature : fc) {
-            MultiPoint point = (MultiPoint)feature.getGeometry();
-            LngLatAlt position = point.getCoordinates().get(0);
-            String kastaniensorte = feature.getProperty("BAUMART");
-            String kronendurchmesser=feature.getProperty("KRONE_DM"+"");
-            String pflanzjahr=feature.getProperty("PFLANZJAHR")+"";
-            String stammumfang=feature.getProperty("STAMMUMFAN")+"";
-           /* String additionalInfo = "Kronendurchmesser: "+kronendurchmesser+"\n"+
-                    "Stammumfang: "+stammumfang+"\n"+
-                    "Pflanzjahr: "+pflanzjahr;*/
-        /*
-            TreeMeta tm = new TreeMeta(pflanzjahr,kronendurchmesser,stammumfang);
-            LatLng metapos = new LatLng(position.getLatitude(), position.getLongitude());
-            metadata.put(metapos,tm);
-            mmap.addMarker(new MarkerOptions().position(metapos).title(kastaniensorte).snippet("  "));
-
-            if (maxCounter++ > 20) {
-                break;
-            }
-        }*/
         int[] parseListOSM = {R.raw.castanea, R.raw.aesculus};
         for (int parsefiles : parseListOSM) {
             maxCounter = 0;
@@ -134,17 +107,9 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
                 TreeMeta tm = new TreeMeta("unbekannt", "unbekannt", "unbekannt", feature);
                 GeoPoint metapos = new GeoPoint(position.getLatitude(), position.getLongitude());
 
-                //if(maxCounter==1) {
                 float[] dest = new float[3];
                 Location.distanceBetween(lastPosition.getLatitude(), lastPosition.getLongitude(), metapos.getLatitude(), metapos.getLongitude(), dest);
-                    /*Toast.makeText(this, "DST:"+dest[0],
-                            Toast.LENGTH_LONG).show();*/
-
-                //}
-                //feature.setProperty("DST",dest[0]);
-                //feature.setProperty("DST",dest[0]);
-                //feature.setProperty("DST",dest[0]);
-                if (dest[0] < 100000) {
+                if (isNear(dest[0])) {
 
                     Marker mt = new Marker(mapView);
                     mt.setPosition(metapos);
@@ -160,6 +125,10 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
             }
 
         }
+    }
+
+    private boolean isNear(float v) {
+        return v < 100000; // 100 km
     }
 
 
@@ -179,16 +148,18 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
 
             GeoPoint position = new GeoPoint(lastPosition.getLatitude(), lastPosition.getLongitude());
             OverlayItem positionRef = new OverlayItem("Ich", "Hier bin ich", position);
+            if (lastPositionMarker == null) {
+                lastPositionMarker = new Marker(mapView);
+                lastPositionMarker.setSnippet("Standort");
+                lastPositionMarker.setIcon(getResources().getDrawable(R.drawable.ic_launcher));
+                lastPositionMarker.setTitle("Standort");
+                mapView.getOverlays().add(lastPositionMarker);
+                mapController.setCenter(position);
+                mapController.setZoom(14);
 
-            Marker pm = new Marker(mapView);
-            pm.setSnippet("Standort");
-            pm.setPosition(position);
-            pm.setIcon(getResources().getDrawable(R.drawable.ic_launcher));
-            pm.setTitle("Standort");
-            mapView.getOverlays().add(pm);
+            }
+            lastPositionMarker.setPosition(position);
 
-            mapController.setCenter(position);
-            mapController.setZoom(14);
             mapView.invalidate();
         }
         addTrees();
