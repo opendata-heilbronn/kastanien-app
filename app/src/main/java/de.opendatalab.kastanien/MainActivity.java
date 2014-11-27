@@ -29,6 +29,8 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapController;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.OverlayItem;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.Serializable;
 
@@ -94,6 +96,12 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
     }
 
     public void addTrees() {
+
+
+        new de.opendatalab.kastanien.TreeLoaderTask(lastPosition,100000).execute();
+        /*
+
+        TODO REFACTOR TO API
         int maxCounter = 0;
         int[] parseListOSM = {R.raw.castanea, R.raw.aesculus};
         for (int parsefiles : parseListOSM) {
@@ -102,9 +110,9 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
             for (Feature feature : fc) {
                 Point point = (Point) feature.getGeometry();
                 LngLatAlt position = point.getCoordinates();
-
-
-                TreeMeta tm = new TreeMeta("unbekannt", "unbekannt", "unbekannt", feature);
+               // String httpquery = "http://nominatim.openstreetmap.org/reverse?format=json&lat="+position.getLatitude()+"&lon="+position.getLongitude()+"&zoom=186addressdetails=1";
+                //Log.i("Castanea",response);
+                de.opendatalab.kastanien.TreeMeta tm = new de.opendatalab.kastanien.TreeMeta("unbekannt", "unbekannt", "unbekannt", feature);
                 GeoPoint metapos = new GeoPoint(position.getLatitude(), position.getLongitude());
 
                 float[] dest = new float[3];
@@ -125,7 +133,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
                 }
             }
 
-        }
+        }*/
     }
 
     private boolean isNear(float v) {
@@ -220,35 +228,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
     }
 
 
-    public class TreeMeta implements Serializable {
-        private String treePlantYear;
-        private String treeTopSize;
-        private String treeTrunkSize;
-        private Feature tree;
 
-        public TreeMeta(String treePlantYear, String treeTopSize, String treeTrunkSize, Feature tree) {
-            this.treePlantYear = treePlantYear;
-            this.treeTopSize = treeTopSize;
-            this.treeTrunkSize = treeTrunkSize;
-            this.tree = tree;
-        }
-
-        public String getTreePlantYear() {
-            return treePlantYear;
-        }
-
-        public String getTreeTopSize() {
-            return treeTopSize;
-        }
-
-        public String getTreeTrunkSize() {
-            return treeTrunkSize;
-        }
-
-        public Feature getTree() {
-            return tree;
-        }
-    }
 
 
     public class MarkerPopup extends MarkerInfoWindow {
@@ -264,7 +244,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
                 public void onClick(View view) {
                     Intent myIntent = new Intent(ma, de.opendatalab.kastanien.TreeInfo.class);
                     FeatureCollection tw = new FeatureCollection();
-                    tw.add(((TreeMeta) m.getRelatedObject()).getTree());
+                    tw.add(((de.opendatalab.kastanien.TreeMeta) m.getRelatedObject()).getTree());
                     try {
                         String metadata = new ObjectMapper().writeValueAsString(tw);
                         myIntent.putExtra("treeData", metadata); //Optional parameters
