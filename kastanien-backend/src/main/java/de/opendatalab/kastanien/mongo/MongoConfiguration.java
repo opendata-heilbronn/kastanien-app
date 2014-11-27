@@ -2,7 +2,7 @@ package de.opendatalab.kastanien.mongo;
 
 import com.mongodb.Mongo;
 import com.mongodb.WriteConcern;
-import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
@@ -24,10 +24,10 @@ import java.util.List;
 @Configuration
 public class MongoConfiguration extends AbstractMongoConfiguration {
 
-	@Value("${mongo.db}")
-	private String mongoDb;
-	@Value("${mongo.host}")
-	private String host;
+    //@Value("${mongo.db}")
+    private String mongoDb = "castanea";
+    //@Value("${mongo.host}")
+    private String host = "mongohost";
 
 	@Override
 	protected String getDatabaseName() {
