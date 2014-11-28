@@ -17,3 +17,9 @@ allprojects {
         jcenter()
     }
 }
+
+subprojects {
+    configurations {
+        compile.exclude module: 'commons-logging'
+    }
+}
