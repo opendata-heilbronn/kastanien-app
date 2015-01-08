@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.opendatalab.kastanien.GeoResultsWithBoundingBox;
+import de.opendatalab.kastanien.NearTree;
 import de.opendatalab.kastanien.Tree;
 import de.opendatalab.kastanien.data.NearUserQuery;
 

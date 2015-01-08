@@ -9,21 +9,17 @@ import android.widget.ListView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.geojson.Feature;
-import org.geojson.FeatureCollection;
 import org.osmdroid.bonuspack.overlays.Marker;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.Set;
 
 
 public class TreeInfo extends Activity {
 
-    private Feature tree;
+    private Tree tree;
     private GeoPoint position;
     private MapView mmap;
 
@@ -35,7 +31,7 @@ public class TreeInfo extends Activity {
         double[] pos = getIntent().getDoubleArrayExtra("treeID");
         String treemetayaml = getIntent().getStringExtra("treeData");
         try {
-            tree = new ObjectMapper().readValue(treemetayaml, FeatureCollection.class).getFeatures().get(0);
+            tree = new ObjectMapper().readValue(treemetayaml, Tree.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -45,11 +41,7 @@ public class TreeInfo extends Activity {
 
 
         ArrayList<String> kvpairs = new ArrayList<String>();
-        Map<String, Object> meta = tree.getProperties();
-        Set<String> metaIDs = meta.keySet();
-        for (String key : metaIDs) {
-            kvpairs.add(key + ": " + meta.get(key));
-        }
+        kvpairs.add( "Type: " + tree.getTreeType());
         ListView v = (ListView) findViewById(R.id.treeDataList);
         v.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, kvpairs));
 

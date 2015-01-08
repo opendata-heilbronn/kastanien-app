@@ -12,30 +12,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.geojson.Feature;
-import org.geojson.FeatureCollection;
-import org.geojson.LngLatAlt;
-import org.geojson.Point;
 import org.osmdroid.bonuspack.overlays.Marker;
 import org.osmdroid.bonuspack.overlays.MarkerInfoWindow;
+import org.osmdroid.util.BoundingBoxE6;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapController;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.OverlayItem;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestTemplate;
-
-import java.io.Serializable;
 
 
-public class MainActivity extends Activity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener, LocationListener
+public class MainActivity extends Activity implements LocationListener, de.opendatalab.kastanien.ResultHandler<GeoResultsWithBoundingBox>
 
 {
     private Location lastPosition = null;
@@ -52,9 +44,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
         setContentView(R.layout.activity_main);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-        //addTrees();
-        ((SeekBar) findViewById(R.id.distanceSelector)).setOnSeekBarChangeListener(this);
 
         mapView = (MapView) findViewById(R.id.mmap);
         mapView.setBuiltInZoomControls(true);
@@ -85,61 +74,27 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
     }
 
     @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.button) {
-            // addTrees();
+    public void onResponse(GeoResultsWithBoundingBox response) {
+        for (NearTree nearTree : response.getTrees()) {
+            Tree tree = nearTree.getContent().getContent();
+            GeoPoint metapos = new GeoPoint(tree.getLocation().getLatitude(), tree.getLocation().getLongitude());
 
-
-        } else {
-
+            Marker mt = new Marker(mapView);
+            mt.setPosition(metapos);
+            mt.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+            mt.setIcon(getResources().getDrawable(R.drawable.tree_icon));
+            mt.setSnippet("Kastanie " + nearTree.getDistance() + "marker entfernt");
+            mt.setInfoWindow(new MarkerPopup(mapView, this));
+            mt.setRelatedObject(tree);
+            mapView.getOverlays().add(mt);
         }
+        BoundingBox bb = response.getBoundingBox();
+        mapController.zoomToSpan(new BoundingBoxE6(bb.getNorth(), bb.getEast(), bb.getSouth(), bb.getWest()));
     }
 
     public void addTrees() {
-
-
-        new de.opendatalab.kastanien.TreeLoaderTask(lastPosition,100000).execute();
-        /*
-
-        TODO REFACTOR TO API
-        int maxCounter = 0;
-        int[] parseListOSM = {R.raw.castanea, R.raw.aesculus};
-        for (int parsefiles : parseListOSM) {
-            maxCounter = 0;
-            FeatureCollection fc = de.opendatalab.kastanien.CastaneaReader.with(this).read(parsefiles);
-            for (Feature feature : fc) {
-                Point point = (Point) feature.getGeometry();
-                LngLatAlt position = point.getCoordinates();
-               // String httpquery = "http://nominatim.openstreetmap.org/reverse?format=json&lat="+position.getLatitude()+"&lon="+position.getLongitude()+"&zoom=186addressdetails=1";
-                //Log.i("Castanea",response);
-                de.opendatalab.kastanien.TreeMeta tm = new de.opendatalab.kastanien.TreeMeta("unbekannt", "unbekannt", "unbekannt", feature);
-                GeoPoint metapos = new GeoPoint(position.getLatitude(), position.getLongitude());
-
-                float[] dest = new float[3];
-                Location.distanceBetween(lastPosition.getLatitude(), lastPosition.getLongitude(), metapos.getLatitude(), metapos.getLongitude(), dest);
-                if (isNear(dest[0])) {
-
-                    Marker mt = new Marker(mapView);
-                    mt.setPosition(metapos);
-                    mt.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-                    mt.setIcon(getResources().getDrawable(R.drawable.tree_icon));
-                    mt.setSnippet("Kastanie " + dest[0] + "m entfernt");
-                    mt.setInfoWindow(new MarkerPopup(mapView, this));
-                    mt.setRelatedObject(tm);
-                    mapView.getOverlays().add(mt);
-                }
-                if (maxCounter++ > 100) {
-                    break;
-                }
-            }
-
-        }*/
+        new de.opendatalab.kastanien.TreeLoaderTask(lastPosition, 25, this).execute();
     }
-
-    private boolean isNear(float v) {
-        return v < 100000; // 100 km
-    }
-
 
     public void onDisconnected() {
         // Display the connection status
@@ -190,20 +145,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
         super.onStop();
     }
 
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-    }
-
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
-
-    }
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-
-    }
 
     @Override
     public void onLocationChanged(Location location) {
@@ -228,13 +169,10 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
     }
 
 
-
-
-
     public class MarkerPopup extends MarkerInfoWindow {
 
         private MainActivity ma;
-        private Marker m;
+        private Marker marker;
 
         public MarkerPopup(MapView mapView, MainActivity intenttarget) {
             super(R.layout.bonuspack_bubble, mapView);
@@ -243,12 +181,11 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
             btn.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     Intent myIntent = new Intent(ma, de.opendatalab.kastanien.TreeInfo.class);
-                    FeatureCollection tw = new FeatureCollection();
-                    tw.add(((de.opendatalab.kastanien.TreeMeta) m.getRelatedObject()).getTree());
+                    Tree relatedObject = (Tree) marker.getRelatedObject();
                     try {
-                        String metadata = new ObjectMapper().writeValueAsString(tw);
+                        String metadata = new ObjectMapper().writeValueAsString(relatedObject);
                         myIntent.putExtra("treeData", metadata); //Optional parameters
-                        myIntent.putExtra("treeID", new double[]{m.getPosition().getLatitude(), m.getPosition().getLongitude()});
+                        myIntent.putExtra("treeID", new double[]{marker.getPosition().getLatitude(), marker.getPosition().getLongitude()});
                         ma.startActivity(myIntent);
                     } catch (JsonProcessingException e) {
                         e.printStackTrace();
@@ -262,7 +199,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
 
         @Override
         public void onOpen(Object item) {
-            m = (Marker) item;
+            marker = (Marker) item;
             super.onOpen(item);
             mView.findViewById(R.id.bubble_moreinfo).setVisibility(View.VISIBLE);
         }

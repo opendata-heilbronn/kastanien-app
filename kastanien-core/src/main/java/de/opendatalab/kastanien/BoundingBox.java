@@ -1,6 +1,4 @@
-package de.opendatalab.kastanien.near;
-
-import de.opendatalab.kastanien.GeoPoint;
+package de.opendatalab.kastanien;
 
 public class BoundingBox {
 

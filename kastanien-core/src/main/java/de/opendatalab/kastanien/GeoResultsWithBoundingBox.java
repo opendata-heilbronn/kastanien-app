@@ -1,4 +1,4 @@
-package de.opendatalab.kastanien.near;
+package de.opendatalab.kastanien;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -8,6 +8,10 @@ public class GeoResultsWithBoundingBox {
 
     private List<NearTree> trees;
     private BoundingBox boundingBox;
+
+    public GeoResultsWithBoundingBox() {
+    }
+
 
     public GeoResultsWithBoundingBox(List<NearTree> trees) {
         this.trees = trees;

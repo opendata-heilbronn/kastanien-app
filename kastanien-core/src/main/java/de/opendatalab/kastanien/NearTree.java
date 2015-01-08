@@ -1,6 +1,5 @@
-package de.opendatalab.kastanien.near;
+package de.opendatalab.kastanien;
 
-import de.opendatalab.kastanien.Tree;
 import org.springframework.hateoas.Resource;
 
 public class NearTree {
@@ -8,8 +7,11 @@ public class NearTree {
 	private Resource<Tree> content;
 	private double distance;
 
-	public NearTree(Resource<Tree> content, double distance) {
-		this.content = content;
+    public NearTree() {
+    }
+
+    public NearTree(Resource<Tree> content, double distance) {
+        this.content = content;
 		this.distance = distance;
 	}
 
