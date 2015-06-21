@@ -22,6 +22,7 @@ public class ImportService {
 		KNOWN_DATA.put("kastanien.json", DefaultTreeConverter.class);
 		KNOWN_DATA.put("castanea.json", OsmTreeConverter.class);
 		KNOWN_DATA.put("aesculus.json", OsmTreeConverter.class);
+		KNOWN_DATA.put("baeume_hn.geojson", HeilbronnConverter.class);
 	}
 	@Autowired
 	private TreeRepository treeRepository;
@@ -30,13 +31,21 @@ public class ImportService {
 		treeRepository.deleteAll();
 		try {
 			for (Map.Entry<String, Class<? extends TreeConverter>> entry : KNOWN_DATA.entrySet()) {
-				InputStream inputStream = ImportService.class.getClassLoader().getResourceAsStream(entry.getKey());
-				FeatureCollection featureCollection =
-						new ObjectMapper().readValue(inputStream, FeatureCollection.class);
-				TreeConverter treeConverter = entry.getValue().newInstance();
-				for (Feature feature : featureCollection) {
-					Tree tree = treeConverter.toTree(feature);
-					treeRepository.save(tree);
+				System.out.println("Loading: " + entry.getKey());
+				InputStream inputStream = ImportService.class.getClassLoader()
+						.getResourceAsStream("/" + entry.getKey());
+				System.out.println("Inputstream: " + inputStream);
+				if (inputStream != null) {
+					FeatureCollection featureCollection =
+							new ObjectMapper().readValue(inputStream, FeatureCollection.class);
+					TreeConverter treeConverter = entry.getValue().newInstance();
+					for (Feature feature : featureCollection) {
+						Tree tree = treeConverter.toTree(feature);
+						System.out.println("Tree: " + tree.getTreeType());
+						if (tree.getTreeType().contains("astanie")) {
+							treeRepository.save(tree);
+						}
+					}
 				}
 			}
 		}
